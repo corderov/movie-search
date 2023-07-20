@@ -29,7 +29,7 @@ export default function Movie({
   });
 
   const getMovieDetail = async () => {
-    const url = `http://www.omdbapi.com/?i=${mid}&apikey=a4b00c0`;
+    const url = `https://www.omdbapi.com/?i=${mid}&apikey=a4b00c0`;
     console.log("URL", url);
     const response = await fetch(url).then((res) => res.json());
     console.log(response);

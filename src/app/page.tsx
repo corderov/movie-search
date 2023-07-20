@@ -10,7 +10,7 @@ export default function Home() {
   const [searchValue, setSearchValue] = useState<string>("");
 
   const getMovies = async () => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=a4b00c0`;
+    const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=a4b00c0`;
 
     const response = await fetch(url).then((res) => res.json());
 
@@ -22,15 +22,15 @@ export default function Home() {
     getMovies();
   }, [searchValue]);
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <div className="flex justify-between w-full bg-slate-900 gap-2 p-8 rounded-lg">
-        <div className="flex items-center gap-2">
+    <main className="flex min-h-screen flex-col items-center  p-4 sm:p-24">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full bg-slate-900 gap-4 p-8 rounded-lg">
+        <div className="flex items-center justify-center md:justify-start gap-4 w-full">
           <h1 className="text-4xl font-semibold text-white">Movie Search</h1>
           <BiSolidCameraMovie fill="white" size={40} />
         </div>
         <SearchForm searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
-      <div className="w-full">
+      <div className="w-full my-4">
         <MoviesList movies={movies} />
       </div>
     </main>
