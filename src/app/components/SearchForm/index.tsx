@@ -14,6 +14,7 @@ export default function SearchForm(props: SearchFormProps): ReactElement {
         value={searchValue}
         className="grow rounded-full p-2 outline-none bg-inherit"
         placeholder="Search a movie..."
+        maxLength={30}
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <FaSearch color="gray" className="hover:fill-blue-700" />

@@ -15,7 +15,6 @@ export default function Home() {
     const response = await fetch(url).then((res) => res.json());
 
     setMovies(response.Search);
-    console.log("result", response.Search);
   };
 
   useEffect(() => {
@@ -31,7 +30,7 @@ export default function Home() {
         <SearchForm searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       <div className="w-full my-4">
-        <MoviesList movies={movies} />
+        {searchValue && <MoviesList movies={movies} />}
       </div>
     </main>
   );
